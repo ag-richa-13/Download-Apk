@@ -3,32 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Download APK</title>
+    <title>Download Our App</title>
     <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #74ebd5, #acb6e5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        text-align: center;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 100%;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      #downloadButton {
+        background-color: #008cba;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #downloadButton:hover {
+        background-color: #005f7f;
+      }
+
       #progressWrapper {
         display: none;
         margin-top: 20px;
       }
+
       progress {
         width: 100%;
         height: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      progress::-webkit-progress-bar {
+        background-color: #f3f3f3;
+      }
+
+      progress::-webkit-progress-value {
+        background-color: #008cba;
+      }
+
+      #progressText {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #333;
       }
     </style>
   </head>
   <body>
-    <h1>Download Our App</h1>
-    <button id="downloadButton">Download APK</button>
-    <div id="progressWrapper">
-      <progress id="downloadProgress" value="0" max="100"></progress>
-      <span id="progressText">0%</span>
+    <div class="container">
+      <h1>Download Our App</h1>
+      <button id="downloadButton">Download APK</button>
+      <div id="progressWrapper">
+        <progress id="downloadProgress" value="0" max="100"></progress>
+        <span id="progressText">0%</span>
+      </div>
     </div>
 
     <script>
       document
         .getElementById("downloadButton")
         .addEventListener("click", function () {
-          const url =
-            "https://drive.google.com/file/d/171oZGbobLIwRQ-PVbvUzb2qNrw06tV_Z/view"; // Replace this with your APK file URL
+          const url = "YOUR_APK_FILE_URL_HERE"; // Replace this with your APK file URL
           const xhr = new XMLHttpRequest();
           xhr.open("GET", url, true);
           xhr.responseType = "blob";
