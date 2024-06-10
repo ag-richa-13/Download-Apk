@@ -86,7 +86,8 @@
       document
         .getElementById("downloadButton")
         .addEventListener("click", function () {
-          const url = "YOUR_APK_FILE_URL_HERE"; // Replace this with your APK file URL
+          const url =
+            "https://drive.google.com/file/d/171oZGbobLIwRQ-PVbvUzb2qNrw06tV_Z/view"; // Replace this with your APK file URL
           const xhr = new XMLHttpRequest();
           xhr.open("GET", url, true);
           xhr.responseType = "blob";
@@ -110,7 +111,7 @@
               });
               const link = document.createElement("a");
               link.href = window.URL.createObjectURL(blob);
-              link.download = "app.apk";
+              link.download = "DatePicker.apk";
               link.click();
               document.getElementById("progressWrapper").style.display = "none";
               document.getElementById("downloadProgress").value = 0;
